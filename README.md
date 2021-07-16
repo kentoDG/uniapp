@@ -15,6 +15,6 @@
 |uni_modules|用于存放uni_modules组件|
 
 # 三、意见反馈
-* 参考。（[项目地址](https://github.com/xghell/xg-shop.git )）。
+* 参考项目地址。（[项目地址](https://github.com/xghell/xg-shop.git )）。
 
 
