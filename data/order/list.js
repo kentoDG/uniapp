@@ -8,7 +8,7 @@ class Data {
 				{
 					_id: '',
 					logo: '/static/mock/shop/1/logo.jpg',
-					name: '好机汇二手商品旗舰店1',
+					name: '好机汇二手商品旗舰店1asdfsafsafsdfasfd',
 					products: [//此产品为所有活动产品（即打折产品）
 						{
 							_id: '',
