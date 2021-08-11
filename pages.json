@@ -3,504 +3,122 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationStyle": "custom",
+				"navigationBarTitleText": "患者",
 				"app-plus": {
-					"bounce": "none"
+					"bounce": "none",
+					"navigationBarTitleText": "患者"
 				}
 			}
 		},
+		
+		{
+			"path": "pages/patientdetail/patientdetail",
+			"style": {
+				"navigationBarTitleText": "患者详情",
+				"app-plus": {
+					"bounce": "none",
+					"navigationBarTitleText": "患者详情"
+				} 
+			}
+		},
+		{
+			"path": "pages/addpatinet/bindpatient", 
+			"style": {
+				"navigationBarTitleText": "绑定患者",
+				"app-plus": {
+					"bounce": "none",
+					"navigationBarTitleText": "绑定患者"
+				}
+			}
+		},
+		{
+			"path": "pages/firenddetail/firenddetail",
+			"style": {
+				"navigationBarTitleText": "亲友详情",
+				"app-plus": {
+					"bounce": "none",
+					"navigationBarTitleText": "亲友详情"
+				} 
+			}
+		},
+		{
+			"path": "pages/accessmanage/accessmanage",
+			"style": {
+				"navigationBarTitleText": "权限管理",
+				"app-plus": {
+					"bounce": "none",
+					"navigationBarTitleText": "权限管理"
+				} 
+			}
+		},
+		
 	    {
             "path" : "pages/cate/cate",
             "style" : {
-				// #ifdef MP
-				"navigationStyle": "custom",
-				// #endif
-				
-				"navigationBarTitleText": "分类",
-				"app-plus": {
-					"titleNView": {
-						"buttons": [
-							{
-								"type":"none",
-								"float":"left",
-								"fontSrc":"/static/nav-bar.ttf",
-								"text":"\ue650",
-								"fontSize":"20px"
-							},
-							{
-								"type":"none",
-								"float":"right",
-								"fontSrc":"/static/nav-bar.ttf",
-								"text":"\ue602",
-								"fontSize":"20px"
-							}
-						],
-						"searchInput":{
-							"autoFocus": "false",
-							"align":"left",
-							"borderRadius":"1000px",
-							"placeholder":"请输入要搜索的内容"
-						}
-					}
-				}
-			}
-        },
-        {
-            "path" : "pages/find/find",
-			"style": {
-				"navigationBarTitleText": "发现",
-				// #ifdef MP
-				"navigationStyle": "custom",
-				// #endif
-				// #ifdef H5
-				"titleImage": "/static/find/nav-bar-title-icon.png",
-				// #endif
-				"app-plus": {
-					"titleNView": {
-						"type": "float",
-						"backgroundColor": "rgba(0,0,0,0)",
-						// #ifdef APP-PLUS
-						"titleText": "",
-						// #endif
-						"titleColor": "#FFFFFF",
-						"tags": [
-							{
-								"tag": "img",
-								"src": "/static/mock/find/nav-bar-title-icon.png",
-								"position": {
-									"top": "auto",
-									"left": "auto",
-									"width": "56px",
-									"height": "28px"
-								}
-							}
-						],
-						"buttons": [
-							{
-								"float": "left",
-								"fontSrc": "/static/nav-bar.ttf",
-								"text": "\ue600",
-								"fontSize": "20px",
-								"color": "#FFFFFF",
-								"width": "24px"
-							},
-							{
-								"float": "right",
-								"fontSrc": "/static/nav-bar.ttf",
-								"text": "\ue602",
-								"fontSize": "20px",
-								"color": "#FFFFFF",
-								"width": "24px"
-							},
-							{
-								"float": "right",
-								"fontSrc": "/static/nav-bar.ttf",
-								"text": "\ue60d",
-								"fontSize": "20px",
-								"color": "#FFFFFF",
-								"width": "24px"
-							}
-						]
-					}
-				}
+				"navigationBarTitleText": "知识列表"
 			}
         },
 		{
-            "path" : "pages/cart/cart",
-			"style": {
-				"navigationBarTitleText": "购物车",
+		    "path" : "pages/knowledgeDetail/knowledgeDetail",
+		    "style" : {
+				"navigationBarTitleText": "知识详情"
+			}
+		},
+		{
+		    "path" : "pages/modifyNickname/modifyNickname",
+		    "style" : {
+				"navigationBarTitleText": "修改昵称",
 				"app-plus": {
-					"titleNView": {
-						"buttons": [
-							{
-								"type": "menu"
-							}
-						]
-					}
+					"navigationBarTitleText": "修改昵称"
 				}
 			}
-        },
+		},
+		{
+		    "path" : "pages/modifyPwd/modifyPwd",
+		    "style" : {
+				"navigationBarTitleText": "账号与安全",
+				"app-plus": {
+					"navigationBarTitleText": "账号与安全"
+				}
+			}
+		},
+		{
+		    "path" : "pages/bindPatientList/bindPatientList",
+		    "style" : {
+				"navigationBarTitleText": "已绑定的患者列表"
+			}
+		},
 		{
 		    "path" : "pages/user/user",
 			"style": {
-				"navigationStyle": "custom",
-				"navigationBarTitleText": "我的",
-				"h5": {
-					"titleNView": {
-						"type": "transparent"
-					}
-				}
+				"navigationBarTitleText": "个人中心"
 			}
-		},
-		{
-		    "path" : "pages/product/detail",
-			"style": {
-				// #ifndef MP
-				"navigationStyle": "custom"
-				// #endif
-			}
-		},
-		{
-		    "path" : "pages/product/list",
-			"style": {
-				"app-plus": {
-					"titleNView": {
-						"searchInput":{
-							"autoFocus": "false",
-							"align":"left",
-							"borderRadius":"1000px",
-							"placeholder":"请输入要搜索的内容",
-							"backgroundColor": "#f8f8f8"
-						},
-						"buttons": [
-							{
-								"float": "right",
-								"fontSrc": "/static/nav-bar.ttf",
-								"text": "\ue60e",
-								"fontSize": "20px"
-							}
-						]
-					}
-				},
-				"mp-weixin": {
-					"navigationStyle": "custom"
-				}
-			}
-		},
-		{
-		    "path" : "pages/order/list",
-			"style": {
-				"navigationBarTitleText":"我的订单",
-				"app-plus": {
-					"titleNView": {
-						"searchInput":{
-							"autoFocus": "false",
-							"align":"left",
-							"borderRadius":"1000px",
-							"placeholder":"请输入要搜索的内容",
-							"backgroundColor": "#f8f8f8"
-						},
-						"buttons": [
-							{
-								"float": "right",
-								"fontSrc": "/static/nav-bar.ttf",
-								"text": "\ue602",
-								"fontSize": "20px",
-								"width": "30px"
-							},
-							{
-								"float": "right",
-								"fontSrc": "/static/nav-bar.ttf",
-								"text": "\ue6e6",
-								"fontSize": "20px",
-								"width": "30px"
-							}
-						]
-					}
-				}
-			}
-		},
-		{
-		    "path" : "pages/order/detail",
-			"style": {
-				"navigationBarTitleText":"订单详情",
-				// #ifndef MP-WEIXIN
-				"transparentTitle": "auto",
-				// #endif
-				
-				"app-plus": {
-					"titleNView": {
-						"buttons": [
-							{
-								"float": "right",
-								"fontSrc": "/static/nav-bar.ttf",
-								"text": "\ue60c",
-								"fontSize": "20px",
-								"width": "32px"
-							}
-						]
-					}
-				},
-				"mp-weixin": {
-					"navigationStyle":"custom"
-				}
-			}
-		},
-		{
-		    "path" : "pages/setting/list",
-			"style": {
-				"navigationBarTitleText":"账户设置"
-			}
-		},
-		{
-		    "path" : "pages/address/country-choice",
-		    "style": {
-		        "navigationBarTitleText": "选择国家或地区",
-		        "enablePullDownRefresh": false
-		    }
-		    
-		},
-        {
-            "path": "pages/address/list",
-            "style": {
-                "navigationBarTitleText": "收货地址",
-				"backgroundColor": "#FFFFFF"
-            }
-            
-        },
-        {
-            "path" : "pages/address/edit",
-            "style": {
-                "navigationBarTitleText": "新建收货地址",
-				"backgroundColor": "#FFFFFF"
-            }
-            
-        },
-		{
-            "path" : "pages/comment/list",
-            "style": {
-                "navigationBarTitleText": "评价中心"
-            }
-            
-        },
-		{
-		    "path" : "pages/comment/detail",
-		    "style": {
-		        "navigationBarTitleText": "评价详情",
-				"navigationBarBackgroundColor": "#F8F8F8"
-		    }
-		    
-		},
-		{
-		    "path" : "pages/comment/add",
-		    "style": {
-				// #ifdef APP-PLUS
-				"navigationStyle": "custom",
-				// #endif
-		        "navigationBarTitleText": "评价晒单",
-				"h5": {
-					"titleNView": {
-						"buttons": [
-							{
-								"float":"right",
-								"text":"提交",
-								"fontSize":"14px"
-							}
-						]
-					}
-				}
-		    }
-		    
-		},
-		{
-		    "path" : "pages/comment/logistic",
-		    "style": {
-		        "navigationBarTitleText": "评价物流",
-				"navigationBarBackgroundColor": "#F8F8F8",
-				"app-plus": {
-					"titleNView": {
-						"buttons": [
-							{
-								"float":"right",
-								"text":"提交",
-								"fontSize":"14px"
-							}
-						]
-					}
-				}
-		    }
-		},
-		{
-		    "path" : "pages/comment/addition",
-		    "style": {
-				// #ifdef APP-PLUS
-				"navigationStyle": "custom",
-				// #endif
-		        "navigationBarTitleText": "追加评论",
-				"h5": {
-					"titleNView": {
-						"buttons": [
-							{
-								"float":"right",
-								"text":"提交",
-								"fontSize":"14px"
-							}
-						]
-					}
-				}
-		    }
-		    
-		},
-		{
-			"path":"pages/shop/shop",
-			"style":{
-				// #ifndef MP-WEIXIN
-				"transparentTitle": "always",
-				// #endif
-				"app-plus": {
-					"titleNView": {
-						"backgroundColor":"rgba(0,0,0,0)",
-						"titleColor": "#FFFFFF",
-						"buttons": [
-							{
-								"type":"menu"
-							}
-						],
-						"searchInput": {
-							"align":"left",
-							"placeholder":"请输入搜索内容",
-							"borderRadius":"10000px"
-						}
-					}
-				},
-				"mp-weixin": {
-					"navigationStyle": "custom"
-				}
-			}
-		},
-		{
-			"path": "pages/service/customer-service",
-			"style": {
-				
-			}
-		},
-        {
-            "path": "pages/message/list",
-			"style": {
-                "navigationBarTitleText": "消息",
-                "enablePullDownRefresh": false,
-				"app-plus": {
-					"titleNView": {
-						"buttons": [
-							{
-								"float": "right",
-								"fontSrc": "/static/nav-bar.ttf",
-								"text": "\ue613",
-								"fontSize": "21px"
-							}
-						]
-					}
-				}
-            }
-        },
-		{
-		    "path": "pages/message/setting",
-			"style": {
-		        "navigationBarTitleText": "消息设置",
-		        "enablePullDownRefresh": false
-		    }
-		},
-		{
-		    "path": "pages/message/reception-management",
-			"style": {
-		        "navigationBarTitleText": "接收管理",
-		        "enablePullDownRefresh": false
-		    }
 		},
 		{
             "path" : "pages/auth/login/login",
             "style": {
                 "navigationBarTitleText": "登录",
-                "enablePullDownRefresh": false,
-				"app-plus": {
-					"titleNView": {
-						"buttons": [
-							{
-								"float": "right",
-								"text": "帮助",
-								"fontSize":"16px"
-							}
-						]
-					}
-				}
-            }
-            
+                "enablePullDownRefresh": false
+            }   
         },
 		{
-		    "path" : "pages/auth/login/captcha",
+		    "path" : "pages/auth/code-login/code-login",
 		    "style": {
-		        "navigationBarTitleText": "手机号快捷登录",
+		        "navigationBarTitleText": "验证码登录",
 		        "enablePullDownRefresh": false
-		    }
-		    
+		    }   
 		},
-		
 		{
-		    "path" : "pages/auth/login/helper",
+		    "path" : "pages/address/country-choice",
 		    "style": {
-		        "navigationBarTitleText": "登录帮助",
+		        "navigationBarTitleText": "选择地区",
 		        "enablePullDownRefresh": false
-		    }
-		    
+		    }   
 		},
 		{
 		    "path" : "pages/auth/register/register",
 		    "style": {
-		        "navigationBarTitleText": "手机快速注册",
-		        "enablePullDownRefresh": false
-		    }
-		    
-		},
-		{
-		    "path" : "pages/auth/register/phone",
-		    "style": {
-		        "navigationBarTitleText": "手机快速注册",
-		        "enablePullDownRefresh": false
-		    }
-		    
-		},
-		{
-		    "path" : "pages/auth/register/captcha",
-		    "style": {
-		        "navigationBarTitleText": "手机快速注册",
-		        "enablePullDownRefresh": false
-		    }
-		    
-		},
-		{
-		    "path" : "pages/auth/forget-password/account",
-		    "style": {
-		        "navigationBarTitleText": "忘记密码",
-		        "enablePullDownRefresh": false
-		    }
-		    
-		},
-		{
-		    "path" : "pages/auth/forget-password/auth-list",
-		    "style": {
-		        "navigationBarTitleText": "身份验证",
-		        "enablePullDownRefresh": false
-		    }
-		    
-		},
-		{
-		    "path" : "pages/auth/forget-password/auth-phone",
-		    "style": {
-		        "navigationBarTitleText": "手机验证",
-		        "enablePullDownRefresh": false
-		    }
-		    
-		},
-		{
-		    "path" : "pages/auth/forget-password/auth-identity",
-		    "style": {
-		        "navigationBarTitleText": "身份信息验证",
-		        "enablePullDownRefresh": false
-		    }
-		    
-		},
-		{
-		    "path" : "pages/auth/forget-password/auth-consignee",
-		    "style": {
-		        "navigationBarTitleText": "历史收货人验证",
-		        "enablePullDownRefresh": false
-		    }
-		    
-		},
-		{
-		    "path" : "pages/auth/forget-password/new-password",
-		    "style": {
-		        "navigationBarTitleText": "设置新的密码",
+		        "navigationBarTitleText": "注册",
 		        "enablePullDownRefresh": false
 		    }
 		    
@@ -523,18 +141,6 @@
 				"selectedIconPath": "/static/tabbar/cate-selected.png",
 				"text": "知识"
 			},
-			// {
-			// 	"pagePath": "pages/find/find",
-			// 	"iconPath": "/static/tabbar/find.png",
-			// 	"selectedIconPath": "/static/tabbar/find-selected.png",
-			// 	"text": "发现"
-			// },
-			// {
-			// 	"pagePath": "pages/cart/cart",
-			// 	"iconPath": "/static/tabbar/cart.png",
-			// 	"selectedIconPath": "/static/tabbar/cart-selected.png",
-			// 	"text": "购物车"
-			// },
 			{
 				"pagePath": "pages/user/user",
 				"iconPath": "/static/tabbar/user.png",
@@ -544,10 +150,8 @@
 		]
 	},
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "症状APP",
-		"navigationBarBackgroundColor": "#FFFFFF",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor":"#34A2DA",
+		"navigationBarTitleText": "症状APP"
 	},
 	"easycom": {
 	  "autoscan": true,

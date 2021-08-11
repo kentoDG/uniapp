@@ -10,6 +10,7 @@ const style = {
 	UNI_COLOR_GREY: '#E5E5E5',
 	UNI_COLOR_GREYBLACK: '#777',
 	UNI_COLOR_BLACK: '#000',
+	UNI_COLOR_MAIN:'#34A2DA',
 	
 	//字体大小
 	UNI_FONT_SIZE_XS: '20rpx',

@@ -4,42 +4,26 @@
 		mapActions
 	} from 'vuex'
 	import config from '@/admin.config.js'
-	
+	 
 	export default {
 		computed: {
 			...mapGetters({
-				isTokenValid: 'user/isTokenValid'
+				isLogin: 'user/isLogin'
 			})
+		},
+		onLaunch: function() {
+			console.log('App Launch')
+			const that = this;
+			if (!this.isLogin) {
+				uni.reLaunch({
+					url: config.login.url
+				})
+			}
 		},
 		onPageNotFound(msg) {
 			uni.redirectTo({
 				url: config.error.url
 			})
-		},
-		onLaunch: function() {
-			console.log('App Launch')
-			console.log(this.isTokenValid)
-			
-			if (this.isTokenValid) {
-				uni.redirectTo({
-					url: config.login.url
-				})
-			}
-			
-			// #ifdef APP-PLUS
-			// 一键登录预登陆，可以显著提高登录速度
-			uni.preLogin({
-				provider: 'univerify',
-				success: (res) => {
-					// 成功
-					console.log("preLogin success: ", res);
-				},
-				fail: (res) => {
-					// 失败
-					console.log("preLogin fail res: ", res);
-				}
-			})
-			// #endif
 		},
 		onShow: function() {
 			console.log('App Show')
@@ -47,15 +31,17 @@
 		onHide: function() {
 			console.log('App Hide')
 		},
-		onError:function(){
+		onError: function() {
 			console.log('App Error')
 		}
 	}
 </script>
 
 <style lang="scss">
-	page{
-		background-color: $page-bg-color;
+	uni-page-body,
+	html,
+	body {
+		height: 100%;
+		background-color: #f4f4f4;
 	}
-
 </style>

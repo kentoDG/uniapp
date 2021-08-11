@@ -1,99 +1,80 @@
 <template>
 	<view class="page">
-		<view class="column-center-start margin-top-lg margin-bottom-lg padding-left-lg">
-			<!-- <image class="logo" src="/static/auth/cattle.png" mode="aspectFit"></image> -->
-			<text class="font-size-lg font-weight-bold">输入手机号</text>
-		</view>
-		
-		<template v-if="isSmsLogin">
-			<view class="border-bottom-solid-1 margin-side-xl margin-bottom-lg">
-				<uni-forms ref="form" :border="true">
-					<!-- <uni-forms-item  name="">
-						<view class="flex-1  row-between-center country">
-							<text class="country-text">国家/地区</text>
-							<navigator class="row-center-center" hover-class="none" open-type="navigate" url="/pages/address/country-choice?from=/pages/auth/login/login">
-								<text class="country-text">{{countryAndCode}}</text>
-								<uni-icons type="arrowdown"></uni-icons>
-							</navigator>
-						</view>
-					</uni-forms-item> -->
-					<uni-forms-item  name="phone">
-						<view class="row-center-center">
-							<navigator class="row-center-center" hover-class="none" open-type="navigate" url="/pages/address/country-choice?from=/pages/auth/login/login">
-								<text class="country-text">{{countryAndCode}}</text>
-								<uni-icons type="arrowdown"></uni-icons>
-							</navigator>
-							<uni-easyinput class="flex-1" type="number" :inputBorder="false" placeholder="请输入手机号" v-model="phone" />
-							<!-- <navigator hover-class="none" url="/pages/auth/forget-password/account">
-								<text class="font-size-base border-left-solid-1 padding-side-base margin-left-base">忘记密码</text>
-							</navigator> -->
-						</view>
-					</uni-forms-item>
-					<uni-forms-item  name="password">
+		<view class="section">
+			<view class="login-title"></view>
+			<view class="form">
+				<view class="list-item">
+					<view class="area-con">
+						<navigator hover-class="none" open-type="navigate"
+							url="/pages/address/country-choice?from=/pages/auth/login/login">
+							<text class="country-text">{{countryAndCode}}</text>
+							<uni-icons type="arrowdown"></uni-icons>
+						</navigator>
+					</view>
+					<view class="input-con">
+						<uni-easyinput type="number" :inputBorder="false" placeholder="请输入手机号"
+							v-model="phone" />
+					</view>
+
+				</view>
+				<view class="list-item">
+					<view class="input-con">
 						<uni-easyinput type="password" :inputBorder="false" placeholder="请输入密码" v-model="password" />
-					</uni-forms-item>
-				</uni-forms>
-			</view>
-			<view>
-				<button class="border-radius-rect-circle  margin-side-xl" type="warn" :disabled="isGetCaptchaBtnDisabled" :loading="isLoading" @tap="onLoginBtnTap">
-					<text class="font-size-lg">登录</text>
-				</button>
-			</view>
-		</template>
-		<template v-else>
-			<view class="border-bottom-solid-1 margin-side-xl margin-bottom-lg">
-				<uni-forms ref="form" :border="true">
-					<uni-forms-item  name="account">
-						<uni-easyinput :inputBorder="false" placeholder="用户名/邮箱/手机号" v-model="account" />
-					</uni-forms-item>
-					<uni-forms-item  name="password">
-						<uni-easyinput type="password" :inputBorder="false" placeholder="请输入密码" v-model="password" />
-					</uni-forms-item>
-				</uni-forms>
-			</view>
-			<view>
-				<button class="border-radius-rect-circle  margin-side-xl" type="warn" :disabled="isLoginBtnDisabled" :loading="isLoading" @tap="onLoginBtnTap">
-					<text class="font-size-lg">登录</text>
-				</button>
-			</view>
-		</template>
-		
-		<view class="row-between-center margin-side-xl margin-v-side-lg">
-			<text v-if="isSmsLogin" class="font-size-lg text-color-greyblack"></text>
-			<text v-else class="font-size-lg text-color-greyblack"></text>
-			<text class="font-size-lg text-color-greyblack" @tap="toRegister">注册</text>
-		</view>
-		
-		<!-- <view class="footer">
-			<view class="row-center-center margin-bottom-lg">
-				<view class="line"></view>
-				<text class="text-color-greyblack font-size-base margin-side-lg">其他登陆方式</text>
-				<view class="line"></view>
-			</view>
-			<view class="row-around-center">
-				<view v-for="(loginMethod, loginMethodIndex) of loginMethods" :key="loginMethodIndex" @tap="tologin(loginMethod.provider)">
-					<image class="img-size-lg" :src="loginMethod.image" mode="aspectFit"></image>
+					</view>
 				</view>
 			</view>
+			<view class="footer-btn-con">
+				<view class="foot-btn" @click.stop="onLoginBtnTap">登录</view>
+				<view class="register">
+					<view class="code-login"  @click.stop="toCodeLogin">短信验证登录</view>
+					<view class="register-new" @click.stop="toRegister">新用户注册</view>
+				</view>
+			</view>
+		</view>
+		<!-- <view class="login-title">输入手机号</view>
+		<view class="border-bottom-solid-1 margin-side-xl margin-bottom-lg">
+			<uni-forms ref="form" :border="true">
+				<uni-forms-item name="phone">
+					<view class="row-center-center">
+						<navigator class="row-center-center" hover-class="none" open-type="navigate"
+							url="/pages/address/country-choice?from=/pages/auth/login/login">
+							<text class="country-text">{{countryAndCode}}</text>
+							<uni-icons type="arrowdown"></uni-icons>
+						</navigator>
+						<uni-easyinput class="flex-1" type="number" :inputBorder="false" placeholder="请输入手机号"
+							v-model="phone" />
+					</view>
+				</uni-forms-item>
+				<uni-forms-item name="password">
+					<uni-easyinput type="password" :inputBorder="false" placeholder="请输入密码" v-model="password" />
+				</uni-forms-item>
+			</uni-forms>
+		</view>
+		<view>
+			<button class="border-radius-rect-circle  margin-side-xl" type="warn" @tap="onLoginBtnTap">
+				<text class="font-size-lg">登录</text>
+			</button>
+		</view>
+		<view class="row-between-center margin-side-xl margin-v-side-lg">
+			<text class="font-size-lg text-color-greyblack"></text>
+			<text class="font-size-lg text-color-greyblack" @tap="toRegister">注册</text>
 		</view> -->
 	</view>
 </template>
 
 <script>
-	import config from './config';
-	import adminConfig from '@/admin.config'
-	
-	import data from '@/data/auth/login/login';
-	
+	import mixin from '@/common/mixin';
+	import {
+		mapMutations
+	} from 'vuex'
 	export default {
-		mixins: [config],
+		mixins: [mixin],
 		data() {
 			return {
 				countryAndCode: '',
-				to: '', //登录成功后跳转到的页面
 				phone: '',
-				account: '',
 				password: '',
+				validateCode: ''
 			};
 		},
 		computed: {
@@ -105,58 +86,44 @@
 			}
 		},
 		onLoad(options) {
-			this.to = options.to || adminConfig.index.url;
-			
-			const country = (options.country && JSON.parse(decodeURIComponent(options.country))) || {"area": "中国","area_code": "+86", pinyin: 'Z'};
-			this.countryAndCode =  country.area + '(' + country.area_code + ')';
-			
-			console.log(this.to);
+			const country = (options.country && JSON.parse(decodeURIComponent(options.country))) || {
+				"area": "中国",
+				"area_code": "+86",
+				"pinyin": 'Z'
+			};
+			this.countryAndCode = country.area + '(' + country.area_code + ')';
 		},
-		// #ifndef MP-WEIXIN
-		onNavigationBarButtonTap(e) {
-			const index = e.index;
-			
-			// console.log(index);
-			if (0 === index) {
-				uni.navigateTo({
-					url: '/pages/auth/login/helper',
-					success: res => {},
-					fail: () => {},
-					complete: () => {}
-				});
-				return ;
-			}
-		},
-		// #endif
-		
+
 		methods: {
-			onGetCaptchaBtnTap() {
-				uni.navigateTo({
-					url: '/pages/auth/login/captcha?to=' + this.to,
-					success: res => {},
-					fail: () => {},
-					complete: () => {}
-				});
-			},
 			async onLoginBtnTap() {
-				if (await data.login()) {
+				const [error, success] = await this.$httpRequest({
+					url: "/authorization/token",
+					data: {
+						loginName: this.phone,
+						password: this.password,
+						validateCode: 0
+					},
+					method: 'POST'
+				})
+				console.log('resres', error);
+				console.log('resres', success);
+				if (success && success.data.code == 0) {
+					const token = success.data.token;
+					uni.setStorageSync('token', token)
 					uni.reLaunch({
-						url: this.to,
-						success: res => {},
-						fail: () => {
-							uni.switchTab({
-								url: this.to,
-								fail: (res) => {
-									// console.log(res);
-								}
-							})
-						},
-						complete: () => {}
-					});
+						url: '/pages/index/index'
+					})
+				} else {
+					uni.showToast({
+						title: success.data.msg,
+						icon: "none",
+						duration: 2000,
+						success: () => {}
+					})
 				}
 			},
-			
-			toRegister() {
+
+			async toRegister() {
 				uni.navigateTo({
 					url: '/pages/auth/register/register',
 					success: res => {},
@@ -164,102 +131,125 @@
 					complete: () => {}
 				});
 			},
-			tologin(provider) {
-				// 一键登录已在APP onLaunch的时候进行了预登陆，可以显著提高登录速度。登录成功后，预登陆状态会重置
-				uni.login({
-					provider: provider,
-					success: async (res) => {
-						console.log('login success:', res);
-						uni.showToast({
-							title: '登录成功'
-						});
-					},
-					fail: (err) => {
-						console.log('login fail:', err);
-			
-						// 一键登录点击其他登录方式
-						if (err.code == '30002') {
-							uni.closeAuthView();
-							uni.showToast({
-								title: '其他登录方式'
-							})
-							return;
-						}
-			
-						// 未开通
-						if (err.code == 1000) {
-							uni.showModal({
-								title: '登录失败',
-								content: `${err.errMsg}\n，错误码：${err.code}`,
-								confirmText: '开通指南',
-								cancelText: '确定',
-								success: (res) => {
-									if (res.confirm) {
-										setTimeout(() => {
-											plus.runtime.openWeb('https://ask.dcloud.net.cn/article/37965')
-										}, 500)
-									}
-								}
-							});
-							return;
-						}
-			
-						// 一键登录预登陆失败
-						if (err.code == '30005') {
-							uni.showModal({
-								showCancel: false,
-								title: '预登录失败',
-								content: this.univerifyErrorMsg || err.errMsg
-							});
-							return;
-						}
-			
-						// 一键登录用户关闭验证界面
-						if (err.code != '30003') {
-							uni.showModal({
-								showCancel: false,
-								title: '登录失败',
-								content: JSON.stringify(err)
-							});
-						}
-					}
+			async toCodeLogin(){
+				uni.navigateTo({
+					url: '/pages/auth/code-login/code-login',
+					success: res => {},
+					fail: () => {},
+					complete: () => {}
 				});
-			},
+			}
+
 		},
 	}
 </script>
 
 <style lang="scss" scoped>
 	.page {
-		/* #ifndef H5 */
-		@include position(fixed, 0 0 0 0);
-		/* #endif */
-		/* #ifdef H5 */
-		@include position(fixed, var(--window-top) 0 0 0);
-		/* #endif */
+		height: 100%;
 	}
-	
+
+	.section {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.login-title {
+		padding: 50rpx 0 20rpx;
+		font-size: 30rpx;
+	}
+
+	.list-item {
+		width: 686rpx;
+		height: 90rpx;
+		background-color: #FFFFFF;
+		border-radius: 20rpx;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+		padding: 10rpx;
+		margin-bottom: 20rpx;
+
+		.area-con {
+			width: 180rpx;
+			box-sizing: border-box;
+			margin-right: 10rpx;
+			overflow: hidden;
+			/*超出部分隐藏*/
+			white-space: nowrap;
+			/*禁止换行*/
+			text-overflow: ellipsis;
+			/*省略号*/
+		}
+
+		.input-con {
+			flex: 1;
+
+			input {
+				display: block;
+				text-align: left;
+				outline: none;
+				border: none;
+			}
+		}
+	}
+	.footer-btn-con {
+		width: 100%;
+		// display: flex;
+		// flex-direction: column;
+		// align-items: center;
+		.foot-btn {
+			margin: 0 auto;
+			margin-top: 80rpx;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: $uni-bg-color-main;
+			color: white;
+			font-size: 36rpx;
+			font-weight: 400;
+			width: 686rpx;
+			height: 88rpx;
+			border-radius: 44rpx;
+		}
+		.register{
+			width: 686rpx;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			// text-align: right;
+			font-size: 30rpx;
+			padding-top: 20rpx;
+			padding-right: 44rpx;
+			padding-left: 44rpx;
+		}
+	}
+	// .login-title {
+	// 	width: 100%;
+	// 	font-size: 28rpx;
+	// 	margin: 40rpx 0 20rpx;
+	// }
+
 	.logo {
 		width: 200rpx;
 		height: 200rpx;
 	}
-	
+
 	.country {
 		padding: 0 10px;
 	}
+
 	.country-text {
 		line-height: 2;
 		font-size: 14px;
 	}
-	
+
 	.line {
 		flex: 1;
 		width: 20rpx;
 		height: 1px;
-		background-color: $uni-color-greyblack;
-	}
-	
-	.footer {
-		@include position(absolute, none 0 $uni-spacing-row-xl*1.5 0);
 	}
 </style>

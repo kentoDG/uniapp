@@ -1,24 +1,22 @@
 export default {
     namespaced: true,
     state: {
-        token: uni.getStorageSync('uni_id_token'),
+        token: uni.getStorageSync('token'),
+		isLogin:false,
         tokenExpired: uni.getStorageSync('uni_id_token_expired'),
         userInfo: {}
     },
     getters: {
-        isTokenValid(state) {
-            return !!state.token && state.tokenExpired > Date.now()
+        isLogin(state) {
+            return !!state.token
         }
     },
     mutations: {
         SET_TOKEN: (state, {
-            token,
-            tokenExpired
+            token
         }) => {
             state.token = token
-            state.tokenExpired = tokenExpired
-            uni.setStorageSync('uni_id_token', token)
-            uni.setStorageSync('uni_id_token_expired', tokenExpired)
+            uni.setStorageSync('token', token)
         },
         REMOVE_TOKEN: (state) => {
             state.token = ''

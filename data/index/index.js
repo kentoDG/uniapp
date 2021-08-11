@@ -40,7 +40,7 @@ class Data{
 	
 	async banner() {
 		const banner = {
-			url: '',
+			url: '/page/cate/cate',
 			image: '/static/mock/index/banner.png'
 		};
 		
@@ -228,19 +228,19 @@ class Data{
 		const products = generateList(5, (index) => {
 			return [
 				{
-					_id: '',
+					_id: '1',
 					image: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1296142825,126703938&fm=26&gp=0.jpg',
-					title: '桃子 新鲜美味的大桃子新鲜美味的大桃子新鲜美味的大桃子新鲜美味的大桃子新鲜美味的大桃子新鲜美味的大桃子新鲜美味的大桃子新鲜美味的大桃子新鲜美味的大桃子新鲜美味的大桃子',
+					title: '张三',
 				},
 				{
-					_id: '',
+					_id: '2',
 					image: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=260493562,617646781&fm=26&gp=0.jpg',
-					title: '台灯'
+					title: '张三'
 				},
 				{
-					_id: '',
+					_id: '3',
 					image: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=118130856,2519923284&fm=26&gp=0.jpg',
-					title: '油炸丸子'
+					title: '张三'
 				}
 			]
 		})

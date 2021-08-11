@@ -23,7 +23,10 @@
 </template>
 
 <script>
+	import mixin from '@/common/mixin';
+	
 	export default {
+		mixins:[mixin],
 		data() {
 			return {
 				isNextBtnDisabled: true,
